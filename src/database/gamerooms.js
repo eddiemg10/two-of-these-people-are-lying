@@ -68,7 +68,7 @@ async function useGetGameArticles(roomID) {
   if (room) {
     if (room.articles) {
       room.articles.forEach((r) => {
-        if (room.players.includes(r.player) && r.player != currentPlayer) {
+        if (room.players.includes(r.player) && r.player !== currentPlayer) {
           articles.push(r);
         }
       });
