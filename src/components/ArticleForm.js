@@ -5,9 +5,9 @@ function ArticleForm(props) {
 
   const inputRef = useRef(null);
 
-  useEffect(() => {
-    inputRef.current.focus();
-  });
+  // useEffect(() => {
+  //   inputRef.current.focus();
+  // });
 
   useEffect(() => {
     let value = props.val ? props.val : "";

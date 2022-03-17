@@ -431,7 +431,6 @@ body {
   border: 1px solid #ccc;
   background: #fff;
   overflow: auto;
-  webkitoverflowscrolling: touch;
   border-radius: 4px;
   outline: none;
   padding: 20px;
@@ -610,6 +609,9 @@ body {
   }
   .article-input.edit {
     width: 90%;
+  }
+  .article-input {
+    width: 80%;
   }
   .share-button {
     width: 20%;
