@@ -46,16 +46,18 @@ function useGetUsers(room) {
 }
 
 async function useGetRooms(playerID) {
-  const docRef = doc(db, "users", playerID);
-  const user = await (await getDoc(docRef)).data();
-  let rooms = [];
+  if (playerID !== undefined) {
+    const docRef = doc(db, "users", playerID);
+    const user = await (await getDoc(docRef)).data();
+    let rooms = [];
 
-  if (user.rooms) {
-    user.rooms.forEach((r) => {
-      rooms.push(r);
-    });
+    if (user.rooms) {
+      user.rooms.forEach((r) => {
+        rooms.push(r);
+      });
+    }
+    return rooms;
   }
-  return rooms;
 }
 
 async function useIdentifyUser(playerID, room) {
@@ -76,7 +78,7 @@ async function useIdentifyUser(playerID, room) {
 }
 
 async function useAddUser() {
-  const docRef = await addDoc(ref, {
+  await addDoc(ref, {
     id: "id",
     rooms: [],
   });
