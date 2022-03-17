@@ -160,8 +160,8 @@ function Home(props) {
 
       <div>
         <img
-          // src="https://fontmeme.com/permalink/220227/0b89600a29318a5bf688150bb2a040df.png"
-          src="https://fontmeme.com/permalink/220316/9e91d0751974ececa9f0721ea7e06e54.png"
+          src="https://fontmeme.com/permalink/220227/0b89600a29318a5bf688150bb2a040df.png"
+          // src="https://fontmeme.com/permalink/220316/9e91d0751974ececa9f0721ea7e06e54.png"
           className="banner"
         />
       </div>
