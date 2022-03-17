@@ -46,18 +46,20 @@ function useGetUsers(room) {
 }
 
 async function useGetRooms(playerID) {
-  if (playerID !== undefined) {
+  let rooms = [];
+
+  if (playerID !== null) {
     const docRef = doc(db, "users", playerID);
     const user = await (await getDoc(docRef)).data();
-    let rooms = [];
+    // let rooms = [];
 
     if (user.rooms) {
       user.rooms.forEach((r) => {
         rooms.push(r);
       });
     }
-    return rooms;
   }
+  return rooms;
 }
 
 async function useIdentifyUser(playerID, room) {
@@ -90,7 +92,6 @@ const useSetUser = async () => {
       const docRef = await addDoc(ref, {
         rooms: [],
       });
-      console.log("Document written with ID: ", docRef.id);
       localStorage.setItem("user", docRef.id);
     } catch (err) {
       console.log(err);
