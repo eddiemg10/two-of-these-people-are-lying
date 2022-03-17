@@ -80,7 +80,6 @@ async function useAddUser() {
     id: "id",
     rooms: [],
   });
-  console.log("Document written with ID: ", docRef.id);
 }
 
 const useSetUser = async () => {
